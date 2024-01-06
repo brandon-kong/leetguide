@@ -8,6 +8,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      borderRadius: {
+        'DEFAULT': 'var(--border-radius)',
+      },
       fontFamily: {
         sans: ['var(--font-inter)'],
         mono: ['var(--font-poppins)'],
@@ -19,17 +22,21 @@ const config: Config = {
       },
       colors: {
         primary: {
-          DEFAULT: '#0A0A0A',
-          50: '#E5E5E5',
-          100: '#D0D0D0',
-          200: '#A1A1A1',
-          300: '#727272',
-          400: '#434343',
-          500: '#0A0A0A',
-          600: '#080808',
-          700: '#060606',
-          800: '#040404',
-          900: '#020202',
+          DEFAULT: '#6c69bb',
+          '50': '#f2f4fb',
+    '100': '#e8ebf7',
+    '200': '#d5dbf0',
+    '300': '#bbc3e6',
+    '400': '#9fa5da',
+    '500': '#8789cd',
+    '600': '#6c69bb',
+    '700': '#615da5',
+    '800': '#4f4d86',
+    '900': '#43436c',
+    '950': '#29273f',
+
+
+
         },
         secondary: {
           DEFAULT: '#F2F2F2',
@@ -84,6 +91,8 @@ const config: Config = {
           900: '#FF6F00',
         },
       },
+
+      
 
       maxWidth: {
         'content-width': 'var(--content-width)',
