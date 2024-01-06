@@ -87,6 +87,10 @@ const config: Config = {
 
       maxWidth: {
         'content-width': 'var(--content-width)',
+      },
+
+      height: {
+        'navbar-height': 'var(--navbar-height)',
       }
     },
   },
