@@ -1,5 +1,4 @@
 import cn from "@/util/cn"
-import Image from "next/image"
 
 const variants = {
     "sm": "w-8 h-8",
@@ -17,7 +16,7 @@ export type BrandProps = {
 const BrandWithText = ({ className, variant = "md" }: BrandProps) => {
     return (
         <div className={cn("flex items-center", className)}>
-            <Image src="/brand/leetguide.svg" alt="Logo" width={30} height={30}
+            <img src="/brand/leetguide.svg" alt="Logo" width={30} height={30}
             className={cn(variants[variant])}
             />
         </div>

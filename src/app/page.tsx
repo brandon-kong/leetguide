@@ -22,11 +22,17 @@ const landingCards: LandingCardProps[] = [
 
 export default function Home() {
   return (
-    <main className="w-full max-w-content-width mx-auto mt-20 p-content-padding lg:p-0">
+    <main className="relative w-full max-w-content-width mx-auto mt-20 p-content-padding lg:p-0 overflow-x-hidden">
       <LandingHeading
       className={'text-5xl text-center lg:text-left'}
-      >Master the art of solving <br/> problems
+      >Master the art of problem <br/> solving
       </LandingHeading>
+
+      <Image src={'/images/splatter.png'} alt={'Splatter'} width={400} height={400} className={'absolute left-2/3 top-0 mx-auto mt-8 -z-10 select-none opacity-30 hidden lg:block'} />
+      <Image src={'/images/splatter-2.png'} alt={'Splatter'} width={400} height={400} className={'absolute left-2/3 top-0 mx-auto mt-8 -z-10 select-none opacity-40 hidden lg:block'} />
+
+      <Image src={'/images/splatter.png'} alt={'Splatter'} width={400} height={400} className={'absolute rotate-45 left-1/2 top-0 mx-auto mt-8 -z-10 select-none opacity-40 hidden lg:block'} />
+      <Image src={'/images/splatter-2.png'} alt={'Splatter'} width={400} height={400} className={'absolute rotate-90 left-1/2 top-0 mx-auto mt-8 -z-10 select-none opacity-30 hidden lg:block'} />
 
       <P className={'mt-8 text-secondary-900 max-w-md text-center lg:text-left mx-auto lg:mx-0'}>
         LeetGuide is a free and open-source browser extension that helps 
@@ -42,7 +48,7 @@ export default function Home() {
           Download Extension
         </Button>
 
-        <Button variant={'secondary'} className={''}>
+        <Button href={'/sign-in'} variant={'secondary'} className={''}>
           Get Started
         </Button>
       </div>

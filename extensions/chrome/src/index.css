@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-rgb: 255, 255, 255;
+
+  --content-width: 1000px;
+  --navbar-height: 60px;
+  --border-radius: 9999px;
+
+  --content-padding-x: 2rem;
+  --content-padding-y: 2rem;
+  --content-padding: var(--content-padding-y) var(--content-padding-x);
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background-color: rgb(var(--background-rgb));
+
+  font-family: var(--font-poppins);
+}

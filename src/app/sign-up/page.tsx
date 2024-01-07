@@ -70,6 +70,11 @@ export default function SignUp() {
           <Image src={'/logos/google-chrome.png'} alt={'Google Chrome'} width={20} height={20} className={'mr-2'} />
           Sign up with Google
         </Button>
+
+        <Button variant={'outline'} className={'w-full'}>
+          <Image src={'/logos/github.svg'} alt={'GitHub'} width={20} height={20} className={'mr-2'} />
+          Sign in with GitHub
+        </Button>
       </div>
     </main>
   )

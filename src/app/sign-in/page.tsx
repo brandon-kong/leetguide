@@ -1,4 +1,4 @@
-import { BrandWithText, Button, H1, H2, H3, H4, H5, Input, LandingCard, LandingCardProps, LandingHeading, P } from '@/components'
+import { BrandWithText, Button, H2, Input, P } from '@/components'
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -63,6 +63,11 @@ export default function SignIn() {
         <Button variant={'outline'} className={'w-full'}>
           <Image src={'/logos/google-chrome.png'} alt={'Google Chrome'} width={20} height={20} className={'mr-2'} />
           Sign in with Google
+        </Button>
+
+        <Button variant={'outline'} className={'w-full'}>
+          <Image src={'/logos/github.svg'} alt={'GitHub'} width={20} height={20} className={'mr-2'} />
+          Sign in with GitHub
         </Button>
       </div>
     </main>

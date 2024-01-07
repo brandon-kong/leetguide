@@ -12,7 +12,7 @@ export type LandingCardProps = {
 
 const LandingCard = ({ title, subtitle, image, className }: LandingCardProps) => {
     return (
-        <div className={cn("py-20 px-5 group bg-white border-2 transition-all border-secondary-500 shadow-sm rounded-xl overflow-hidden aspect-square flex flex-col items-center justify-center hover:border-primary hover:shadow-md bg-primary-50/80 hover:bg-transparent", className)}>
+        <div className={cn("py-20 px-5 group  border-2 transition-all border-secondary-500 shadow-sm rounded-xl overflow-hidden aspect-square flex flex-col items-center justify-center hover:border-primary hover:shadow-md bg-primary-50 hover:bg-white", className)}>
             <div className="relative min-h-[100px]">
                 <Image src={'/icons/triangle.svg'} alt={'triangle'} width={100} height={100} 
                 className={'transition-all duration-500 rotate-[24deg] group-hover:rotate-12'}
