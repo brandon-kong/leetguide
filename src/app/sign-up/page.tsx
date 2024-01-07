@@ -39,6 +39,12 @@ export default function SignUp() {
         <form
         className={'w-full space-y-4'}
         >
+
+            <Input 
+            type={'username'}
+            placeholder={'Username'}
+            className={'w-full'}
+            />
             <Input 
             type={'email'}
             placeholder={'Email'}
