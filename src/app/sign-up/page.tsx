@@ -1,8 +1,24 @@
-import { BrandWithText, Button, H1, H2, H3, H4, H5, Input, LandingCard, LandingCardProps, LandingHeading, P } from '@/components'
+'use client';
+
+import { BrandWithText, Button, Card, H1, H2, H3, H4, H5, Input, LandingCard, LandingCardProps, LandingHeading, P } from '@/components'
 import Image from 'next/image'
 import Link from 'next/link'
 
+import { useSearchParams } from 'next/navigation';
+import { appendQueryParams } from '@/util/url';
+
 export default function SignUp() {
+
+  const searchParams = useSearchParams();
+  
+  const calculateBaseUrl = (url: string) => {
+    const params: { [key: string]: string } = {}
+    searchParams.forEach((value, key) => {
+      params[key] = value;
+    })
+
+    return appendQueryParams(url, params);
+  }
   return (
     <main className="h-screen w-full max-w-sm mx-auto flex flex-col items-center justify-center">
       <div
@@ -44,8 +60,8 @@ export default function SignUp() {
             <Button
             className={'w-full'}
             >
-                Sign Up
-            </Button>
+                Create an account
+            </Button>  
         </form>
 
         
@@ -54,7 +70,7 @@ export default function SignUp() {
         className={'flex items-center justify-center gap-2'}
         >
             <P>Already have an account?</P>
-            <Button href={'/sign-in'} variant={'link'} className={'text-md'}>Sign in</Button>
+            <Button href={calculateBaseUrl('/sign-in')} variant={'link'} className={'text-md'}>Sign in</Button>
 
         </div>
 

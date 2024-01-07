@@ -22,7 +22,7 @@ const landingCards: LandingCardProps[] = [
 
 export default function Home() {
   return (
-    <main className="relative w-full max-w-content-width mx-auto mt-20 p-content-padding lg:p-0 overflow-x-hidden">
+    <main className="relative w-full max-w-content-width mx-auto p-content-padding py-12 lg:px-0 overflow-x-hidden">
       <LandingHeading
       className={'text-5xl text-center lg:text-left'}
       >Master the art of problem <br/> solving

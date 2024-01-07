@@ -1,24 +1,24 @@
 import cn from "@/util/cn"
 import Image from "next/image"
 
-const variants = {
+const sizes = {
     "sm": "w-8 h-8",
-    "md": "w-10 h-10",
+    "md": "w-9 h-9",
     "lg": "",
 }
 
-type VariantKey = keyof typeof variants
+type SizeKey = keyof typeof sizes
 
 export type BrandProps = {
     className?: string
-    variant?: VariantKey
+    size?: SizeKey
 }
 
-const BrandWithText = ({ className, variant = "md" }: BrandProps) => {
+const BrandWithText = ({ className, size = "md" }: BrandProps) => {
     return (
         <div className={cn("flex items-center", className)}>
             <Image src="/brand/leetguide.svg" alt="Logo" width={30} height={30}
-            className={cn(variants[variant])}
+            className={cn(sizes[size])}
             />
         </div>
     )

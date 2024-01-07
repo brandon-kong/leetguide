@@ -5,10 +5,11 @@ import { crx } from "@crxjs/vite-plugin";
 import manifest from './manifest.json' assert { type: 'json' } 
 import path from 'path';
 
+import type { ManifestV3Export } from '@crxjs/vite-plugin';
 export default defineConfig({
   plugins: [
     react(),
-    crx({ manifest })
+    crx({ manifest: manifest as ManifestV3Export })
   ],
 
   resolve: {

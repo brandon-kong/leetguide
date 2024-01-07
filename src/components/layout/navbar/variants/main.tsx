@@ -8,7 +8,7 @@ export default function MainNavbar ()
             <nav className="flex items-center justify-between mx-auto max-w-content-width w-full py-2">
                 <div className="flex items-center flex-1">
                     <Link href={"/"} className="flex items-center flex-shrink-0">
-                        <BrandWithText />
+                        <BrandWithText size={'sm'} />
                         <span className="ml-3 font-normal text-3xl font-mono">leetguide</span>
                     </Link>
                 </div>

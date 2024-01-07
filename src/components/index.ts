@@ -11,3 +11,5 @@ export { default as LandingCard } from './layout/landing/landing-card';
 export type { LandingCardProps } from './layout/landing/landing-card';
 
 export { default as Input } from './input';
+
+export { default as Card } from './card';

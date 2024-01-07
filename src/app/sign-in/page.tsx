@@ -1,8 +1,24 @@
+'use client';
+
 import { BrandWithText, Button, H2, Input, P } from '@/components'
 import Image from 'next/image'
 import Link from 'next/link'
 
+import { useSearchParams } from 'next/navigation';
+import { appendQueryParams } from '@/util/url';
+
 export default function SignIn() {
+  const searchParams = useSearchParams();
+  
+  const calculateBaseUrl = (url: string) => {
+    const params: { [key: string]: string } = {}
+    searchParams.forEach((value, key) => {
+      params[key] = value;
+    })
+
+    return appendQueryParams(url, params);
+  }
+  
   return (
     <main className="h-screen w-full max-w-sm mx-auto flex flex-col items-center justify-center">
       <div
@@ -48,7 +64,7 @@ export default function SignIn() {
         className={'flex items-center justify-center gap-2'}
         >
             <P>Don&apos;t have an account?</P>
-            <Button href={'/sign-up'} variant={'link'} className={'text-md'}>Sign Up</Button>
+            <Button href={calculateBaseUrl('/sign-up')} variant={'link'} className={'text-md'}>Create one</Button>
 
         </div>
 
