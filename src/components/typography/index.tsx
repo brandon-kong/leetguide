@@ -7,7 +7,7 @@ type TypographyProps = {
 
 const LandingHeading = ({ className, children }: TypographyProps) => {
     return (
-        <h1 className={cn("scroll-m-20 text-4xl font-extrabold tracking-loose lg:leading-10 lg:text-6xl", className)}>
+        <h1 className={cn("scroll-m-20 text-4xl font-bold tracking-loose lg:leading-10 lg:text-6xl", className)}>
             {children}
         </h1>
     );

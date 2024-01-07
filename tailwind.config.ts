@@ -12,7 +12,7 @@ const config: Config = {
         'DEFAULT': 'var(--border-radius)',
       },
       fontFamily: {
-        sans: ['var(--font-inter)'],
+        sans: ['var(--font-roboto)'],
         mono: ['var(--font-poppins)'],
       },
       backgroundImage: {
@@ -100,6 +100,11 @@ const config: Config = {
 
       height: {
         'navbar-height': 'var(--navbar-height)',
+      },
+
+      spacing: {
+        'content-padding': 'var(--content-padding)',
+        'content-padding-x': 'var(--content-padding-x)'
       }
     },
   },

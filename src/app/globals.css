@@ -9,6 +9,10 @@
   --content-width: 1000px;
   --navbar-height: 60px;
   --border-radius: 9999px;
+
+  --content-padding-x: 2rem;
+  --content-padding-y: 2rem;
+  --content-padding: var(--content-padding-y) var(--content-padding-x);
 }
 
 body {
