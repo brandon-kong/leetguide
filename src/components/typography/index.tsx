@@ -31,7 +31,7 @@ const H2 = ({ className, children }: TypographyProps) => {
 
 const H3 = ({ className, children }: TypographyProps) => {
     return (
-        <h3 className={cn("scroll-m-20 text-2xl font-semibold tracking-tight", className)}>
+        <h3 className={cn("scroll-m-20 text-3xl font-semibold tracking-tight", className)}>
             {children}
         </h3>
     );
@@ -39,7 +39,7 @@ const H3 = ({ className, children }: TypographyProps) => {
 
 const H4 = ({ className, children }: TypographyProps) => {
     return (
-        <h4 className={cn("font-bold text-2xl", className)}>
+        <h4 className={cn("font-semibold text-2xl", className)}>
             {children}
         </h4>
     );
@@ -47,7 +47,7 @@ const H4 = ({ className, children }: TypographyProps) => {
 
 const H5 = ({ className, children }: TypographyProps) => {
     return (
-        <h5 className={cn("font-bold text-xl", className)}>
+        <h5 className={cn("font-semibold text-xl", className)}>
             {children}
         </h5>
     );
@@ -55,7 +55,7 @@ const H5 = ({ className, children }: TypographyProps) => {
 
 const H6 = ({ className, children }: TypographyProps) => {
     return (
-        <h6 className={cn("font-bold text-lg", className)}>
+        <h6 className={cn("font-semibold text-lg", className)}>
             {children}
         </h6>
     );

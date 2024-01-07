@@ -1,4 +1,5 @@
 import cn from "@/util/cn";
+import Link from "next/link";
 
 const shared = "font-mono inline-flex items-center justify-center whitespace-nowrap rounded text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50";
 
@@ -8,6 +9,8 @@ const variants = {
     "secondary": "bg-secondary-500 hover:bg-secondary-600 text-black shadow-sm",
     "ghost": "bg-transparent hover:bg-gray-100 text-gray-700",
     "outline": "bg-transparent border border-primary-500 hover:bg-primary-50 text-primary-500",
+    "link": "bg-transparent text-primary-700 underline inline-flex h-fit px-0",
+    "danger": "bg-red-500 hover:bg-red-600 text-white shadow-sm",
 };
 
 const sizes = {
@@ -26,12 +29,23 @@ export type ButtonProps = {
     size?: SizeKey
     children?: React.ReactNode
     onClick?: () => void
+    href?: string
     
 };
 
-const Button = ({ className, variant = "primary", size = "md", children, onClick }: ButtonProps) => {
+const Button = ({ className, variant = "primary", size = "md", children, onClick, href }: ButtonProps) => {
+    
+    if (href) {
+        return (
+            <Link href={href}>
+                <button className={cn(shared, sizes[size], variants[variant], className)} onClick={onClick}>
+                    {children}
+                </button>
+            </Link>
+        )
+    }
     return (
-        <button className={cn(shared, variants[variant], sizes[size], className)} onClick={onClick}>
+        <button className={cn(shared, sizes[size], variants[variant], className)} onClick={onClick}>
             {children}
         </button>
     )

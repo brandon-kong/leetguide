@@ -29,7 +29,9 @@ export default function Home() {
       </LandingHeading>
 
       <P className={'mt-8 text-secondary-900 max-w-md text-center lg:text-left mx-auto lg:mx-0'}>
-        LeetGuide is a free and open source platform for learning and practicing data structures and algorithms.
+        LeetGuide is a free and open-source browser extension that helps 
+        you track your LeetCode progress and offers curated resources to
+        help you prepare for your next interview.
       </P>
 
       <div
