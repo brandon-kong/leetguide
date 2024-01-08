@@ -8,6 +8,7 @@ const Navbars = {
     '/': <MainNavbar />,
     '/sign-in': <></>,
     '/sign-up': <></>,
+    '/authorize': <></>,
 }
 
 type NavbarKey = keyof typeof Navbars

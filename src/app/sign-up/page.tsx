@@ -20,7 +20,7 @@ export default function SignUp() {
     return appendQueryParams(url, params);
   }
   return (
-    <main className="h-screen w-full max-w-sm mx-auto flex flex-col items-center justify-center">
+    <main className="min-h-screen py-20 w-full max-w-sm mx-auto flex flex-col items-center justify-center">
       <div
       className={'w-full flex flex-col items-center gap-8'}
       >
