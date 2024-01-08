@@ -1,12 +1,12 @@
 'use client';
 
-import { BrandWithText, Button, Card, H2, H3, H4, Input, P } from '@/components'
-import Image from 'next/image'
+import { BrandWithText, Button, Card, H2, H4, P } from '@/components'
 import Link from 'next/link'
 
 import { useSearchParams } from 'next/navigation';
 import { appendQueryParams } from '@/util/url';
 
+import type { Extension } from '@/types/extension';
 type Permission = {
   name: string
   description: string
@@ -25,20 +25,31 @@ const permissions: Permission[] = [
 
 export default function Authorize() {
   const searchParams = useSearchParams();
-  
-  const calculateBaseUrl = (url: string) => {
+
+  const authorize = () => {
+    // fake authorize for now
+    
+    // get the authorization code from the server
+    const code = '1234567890';
+
+    // redirect to extension if extensionId is present
     const params: { [key: string]: string } = {}
     searchParams.forEach((value, key) => {
       params[key] = value;
     })
 
-    return appendQueryParams(url, params);
-  }
+    const { type, extension, extensionId } = params as { type: 'extension', extension: Extension, extensionId: string };
+ 
+    if (type === 'extension') {
+      switch (extension) {
+        case 'chrome':
+          window.location.href = `chrome-extension://${extensionId}/callback?authorized=true&code=${code}`;
+          return;
+      }
+      return;
+    }
 
-  const authorize = () => {
-    // fake authorize for now
-
-    window.location.href = 'chrome-extension://fhgnofnapdongcjbadbdmgcfjlamndhd/callback?authorized=true';
+    window.location.href = 'https://leetguide.com';
   };
   
   return (
@@ -46,9 +57,20 @@ export default function Authorize() {
       <div
       className={'w-full flex flex-col items-center gap-8'}
       >
-        <Link href={'/'}>
-            <BrandWithText />
-        </Link>
+        <div
+        className={'flex items-center gap-10'}
+        >
+          <Link href={'/'}>
+            <BrandWithText size={'lg'} />
+          </Link>
+
+          <hr className={'w-[1px] h-12 bg-secondary-600/80'} />
+
+          <div className={'font-bold select-none h-12 w-12 bg-primary-200 rounded-full flex items-center justify-center text-lg'}>
+            JD
+          </div>
+        </div>
+        
         <H2
         >Authorize with leetguide
         </H2>

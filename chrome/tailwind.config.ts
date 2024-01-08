@@ -100,6 +100,7 @@ const config: Config = {
 
       height: {
         'navbar-height': 'var(--navbar-height)',
+        'body-height': 'var(--body-height)',
       },
 
       spacing: {

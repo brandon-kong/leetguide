@@ -13,3 +13,7 @@ export const getFullUrl = (): Promise<string | undefined> =>  {
         });
     });
 }
+
+export const getExtensionUrl = (): string =>  {
+    return `chrome-extension://${chrome.runtime.id}`
+}

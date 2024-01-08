@@ -1,38 +1,51 @@
 import './App.css'
 
-//import { getFullUrl } from './util/url'
+import { useEffect, useState } from 'react';
+
 import { Button, H4, Navbar } from '@/components'
+import UnauthenticatedView from './components/layout/unauthenticated';
 
 function App() {
   
-  const toSignInPage = () => {
-    chrome.runtime.sendMessage({ action: 'openSignInPage' })
+  const [code, setCode] = useState<string>('')
+
+  useEffect(() => {
+    chrome.storage.local.get(['code'], (result) => {
+      if (result.code) {
+        setCode(result.code)
+      }
+    })
+  }, [setCode])
+
+  const authenticated = code !== ''
+
+  const logout = () => {
+    setCode(() => {
+      return ''
+    });
+    chrome.runtime.sendMessage({ action: 'logout' })
+    
   }
+  
   return (
     <>
       <Navbar />
 
-      <main className='h-[340px] flex flex-col gap-4 items-center justify-center'>
-        <H4>
-          You are not logged in
-        </H4>
+      {
+        !authenticated ? (
+          <UnauthenticatedView />
+        ) : (
+          <main className='h-body-height flex flex-col gap-4 items-center justify-center'>
+            <H4>
+              You are signed in.
+            </H4>
 
-        <div
-        className={'flex flex-col gap-4'}
-        >
-          <Button
-          onClick={toSignInPage}
-
-          >
-            Sign In
-          </Button>
-
-          <Button variant={'secondary'}>
-            Continue as guest
-          </Button>
-        </div>
-        
-      </main>  
+            <Button variant={'secondary'} onClick={logout}>
+              Sign Out
+            </Button>
+          </main>
+        )
+      }
       
     </>
   )

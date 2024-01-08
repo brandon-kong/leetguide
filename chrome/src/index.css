@@ -7,10 +7,14 @@
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-rgb: 255, 255, 255;
+  
+  --content-width: 600px;
+  --content-height: 400px;
 
-  --content-width: 1000px;
   --navbar-height: 60px;
   --border-radius: 9999px;
+
+  --body-height: calc(100vh - var(--navbar-height));
 
   --content-padding-x: 2rem;
   --content-padding-y: 2rem;

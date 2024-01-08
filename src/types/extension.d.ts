@@ -1,0 +1,1 @@
+export type Extension = 'chrome' | 'firefox' | 'safari' | 'edge';

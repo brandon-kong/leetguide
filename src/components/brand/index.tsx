@@ -4,7 +4,7 @@ import Image from "next/image"
 const sizes = {
     "sm": "w-8 h-8",
     "md": "w-9 h-9",
-    "lg": "",
+    "lg": "w-10 h-10",
 }
 
 type SizeKey = keyof typeof sizes
