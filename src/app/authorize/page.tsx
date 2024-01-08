@@ -7,6 +7,22 @@ import Link from 'next/link'
 import { useSearchParams } from 'next/navigation';
 import { appendQueryParams } from '@/util/url';
 
+type Permission = {
+  name: string
+  description: string
+}
+
+const permissions: Permission[] = [
+  {
+    name: 'Basic information about your account',
+    description: 'This includes your username and email address.'
+  },
+  {
+    name: 'Progress',
+    description: 'This includes your progress that you have saved'
+  },
+]
+
 export default function Authorize() {
   const searchParams = useSearchParams();
   
@@ -19,21 +35,11 @@ export default function Authorize() {
     return appendQueryParams(url, params);
   }
 
-  type Permission = {
-    name: string
-    description: string
-  }
+  const authorize = () => {
+    // fake authorize for now
 
-  const permissions: Permission[] = [
-    {
-      name: 'Basic information about your account',
-      description: 'This includes your username and email address.'
-    },
-    {
-      name: 'Progress',
-      description: 'This includes your progress that you have saved'
-    },
-]
+    window.location.href = 'chrome-extension://fhgnofnapdongcjbadbdmgcfjlamndhd/callback?authorized=true';
+  };
   
   return (
     <main className="min-h-screen py-20 w-full max-w-lg mx-auto flex flex-col items-center justify-center">
@@ -76,7 +82,7 @@ export default function Authorize() {
                   <P className={'text-secondary-900'}>{permission.description}</P>
                 </div>
                 <div
-                className={'w-4 h-4 rounded-full bg-primary-500 ring ring-primary-400 ring-offset-2 animate-pulse'}
+                className={'w-4 h-4 rounded-full bg-primary-500 ring ring-primary-400 ring-offset-2'}
                 />
               </div>
               
@@ -94,7 +100,7 @@ export default function Authorize() {
         <div
         className={'w-full flex flex-row-reverse justify-center items-center gap-4'}
         >
-          <Button href={calculateBaseUrl('/authorize')} variant={'primary'}>Allow</Button>
+          <Button onClick={authorize} variant={'primary'}>Allow</Button>
           <Button href={'/'} variant={'secondary'}>Cancel</Button>
         </div>
         

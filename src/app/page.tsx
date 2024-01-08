@@ -1,4 +1,4 @@
-import { Button, H1, H2, H3, H4, LandingCard, LandingCardProps, LandingHeading, P } from '@/components'
+import { Button, Card, H1, H2, H3, H4, LandingCard, LandingCardProps, LandingHeading, P } from '@/components'
 import Image from 'next/image'
 
 const landingCards: LandingCardProps[] = [
