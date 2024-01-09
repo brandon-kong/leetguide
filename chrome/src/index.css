@@ -16,8 +16,8 @@
 
   --body-height: calc(100vh - var(--navbar-height));
 
-  --content-padding-x: 2rem;
-  --content-padding-y: 2rem;
+  --content-padding-x: 1.5rem;
+  --content-padding-y: 1.5rem;
   --content-padding: var(--content-padding-y) var(--content-padding-x);
 }
 
