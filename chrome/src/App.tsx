@@ -1,31 +1,15 @@
 import './App.css'
 
-import { useEffect, useState } from 'react';
-
-import { Button, H4, Navbar } from '@/components'
+import { Navbar } from '@/components'
 import UnauthenticatedView from './components/layout/unauthenticated';
+import AuthenticatedView from './components/layout/authenticated';
+
+import { useAuth } from '@/util/auth/context';
 
 function App() {
   
-  const [code, setCode] = useState<string>('')
+  const { authenticated } = useAuth()
 
-  useEffect(() => {
-    chrome.storage.local.get(['code'], (result) => {
-      if (result.code) {
-        setCode(result.code)
-      }
-    })
-  }, [setCode])
-
-  const authenticated = code !== ''
-
-  const logout = () => {
-    setCode(() => {
-      return ''
-    });
-    chrome.runtime.sendMessage({ action: 'logout' })
-    
-  }
   
   return (
     <>
@@ -35,15 +19,7 @@ function App() {
         !authenticated ? (
           <UnauthenticatedView />
         ) : (
-          <main className='h-body-height flex flex-col gap-4 items-center justify-center'>
-            <H4>
-              You are signed in.
-            </H4>
-
-            <Button variant={'secondary'} onClick={logout}>
-              Sign Out
-            </Button>
-          </main>
+          <AuthenticatedView />
         )
       }
       

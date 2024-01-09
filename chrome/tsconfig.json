@@ -7,8 +7,9 @@
     "skipLibCheck": true,
     "typeRoots": ["./types", "./node_modules/@types"],
     "paths": {
-      "@/*": ["./src/*"],
+      "@*": ["./src/*"],
       "@components/*": ["./src/components/*"],
+      "@util/*": ["./src/util/*"],
     },
 
     /* Bundler mode */

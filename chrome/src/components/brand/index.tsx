@@ -15,7 +15,7 @@ export type BrandProps = {
 
 const BrandWithText = ({ className, variant = "md" }: BrandProps) => {
     return (
-        <div className={cn("flex items-center", className)}>
+        <div className={cn("flex items-center select-none", className)}>
             <img src="/brand/leetguide.svg" alt="Logo" width={30} height={30}
             className={cn(variants[variant])}
             />
