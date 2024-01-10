@@ -16,7 +16,7 @@ export default function AuthProvider({ children }: { children: React.ReactNode }
           if (result.code) {
             setAuthenticated(true)
           }
-
+ 
             setLoading(false)
         })
       }, [setAuthenticated])

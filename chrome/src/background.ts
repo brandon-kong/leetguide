@@ -1,6 +1,15 @@
 import { getFullUrl } from "./util/url";
+import type { TimerState } from './types/timer'
 
-chrome.runtime.onMessage.addListener(async (request) => {
+let timerState: TimerState = {
+  time: 0,
+  isPlaying: false,
+  hasStarted: false,
+};
+
+let timerId: number | null = null;
+
+chrome.runtime.onMessage.addListener(async (request, _sender, sendResponse) => {
   if (request.action === 'openSignInPage') {
     const url = await getFullUrl();
 
@@ -46,6 +55,27 @@ chrome.runtime.onMessage.addListener(async (request) => {
   else if (request.action === 'logout') {
     chrome.storage.sync.remove('code');
     chrome.storage.local.remove('code');
+  }
+
+  if (request.type === 'GET_TIMER_STATE') {
+    sendResponse({ ...timerState});
+  } else if (request.type === 'SET_TIMER_STATE') {
+    console.log('timerState set', timerState);
+    timerState = request.state;
+
+    if (timerState.isPlaying && !timerId) {
+      timerId = setInterval(() => {
+        timerState.time--;
+        if (timerState.time <= 0) {
+          clearInterval(timerId!); 
+          timerId = null;
+          timerState.isPlaying = false;
+        }
+      }, 1000);
+    } else if (!timerState.isPlaying && timerId) {
+      clearInterval(timerId);
+      timerId = null;
+    }
   }
 });
 
