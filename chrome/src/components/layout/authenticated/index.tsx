@@ -95,7 +95,7 @@ export default function AuthenticatedView()
         </div>
 
         <div
-        className={'flex flex-col items-center justify-center bg-secondary col-span-2 row-span-2 rounded-xl'}
+        className={'flex flex-col items-center justify-center bg-primary-100 col-span-2 row-span-2 rounded-xl'}
         >
           <CountdownCircleTimer
           key={key}
@@ -158,7 +158,6 @@ export default function AuthenticatedView()
             )}
           </CountdownCircleTimer>
             
-            { duration } { time }
           <div
           className={'flex items-center gap-2 mt-4'}
           >
